@@ -1,4 +1,4 @@
-# saws
+# SuperAwesomeWalletService
 
 A new Flutter project.
 
