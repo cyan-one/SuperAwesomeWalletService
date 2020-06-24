@@ -34,6 +34,16 @@ dependencies:
   line_awesome_flutter: ^1.0.1
   # Adding Google Fonts
   google_fonts:
+  # Easy use of SVG - https://pub.dev/packages/flutter_svg
+  flutter_svg:
+  # Widget to display dots indicator to show a position (for a PageView for example). - https://pub.dev/packages/dots_indicator
+  dots_indicator: ^1.0.0
+  # A small cozy library that allows you to make snappable list views. - https://pub.dev/packages/snaplist
+  snaplist: ^0.1.8
+  # Easily add staggered animations to your ListView, GridView, Column and Row children - https://pub.dev/packages/flutter_staggered_animations
+  flutter_staggered_animations: "^0.1.2"
+  # A package can help you to change your flutter app's statusbar's color or navigationbar's color programmatically. - https://pub.dev/packages/flutter_statusbarcolor#-installing-tab-
+  flutter_statusbarcolor: "^0.2.3"
 
 dev_dependencies:
   flutter_test:

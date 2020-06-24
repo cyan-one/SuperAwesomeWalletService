@@ -104,7 +104,6 @@ class _TabPageState extends State<TabPage> {
           itemCount: tabs.length, // Can be null
         ),
         // backgroundColor: Colors.green,
-        // body: Container(color: Colors.red,),
         bottomNavigationBar: SafeArea(
           child: Container(
             margin: EdgeInsets.symmetric(horizontal: 10),
