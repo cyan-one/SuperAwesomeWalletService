@@ -1,139 +1,76 @@
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:line_awesome_flutter/line_awesome_flutter.dart';
-import 'package:saws/utils/Colors.dart';
-import 'package:saws/utils/Constant.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
-void main() => runApp(TabPage());
+import 'package:saws/main/utils/AppColors.dart';
+import 'package:saws/Wallet/screens/AppCards.dart';
+import 'package:saws/Wallet/screens/AppDashboard.dart';
+import 'package:saws/Wallet/screens/AppListing.dart';
+import 'package:saws/Wallet/screens/AppSearch.dart';
+import 'package:saws/Wallet/screens/AppSetPassword.dart';
+import 'package:saws/Wallet/screens/AppSettings.dart';
+import 'package:saws/Wallet/screens/AppSignUp.dart';
+import 'package:saws/Wallet/screens/AppVerification.dart';
+import 'package:saws/Wallet/screens/AppWalkthrough.dart';
+import 'package:provider/provider.dart';
+import 'integrations/app_localizations.dart';
+import 'integrations/app_state.dart';
 
-class TabPage extends StatefulWidget {
-  @override
-  _TabPageState createState() => _TabPageState();
+
+void main() {
+  runApp(MyApp());
 }
 
-class _TabPageState extends State<TabPage> {
-  int selectedIndex = 0;
-
-  PageController controller = PageController();
-
-  List<GButton> tabs = new List();
-  List<Color> colors = [
-    Colors.white,
-    Colors.white,
-    Colors.white,
-    Colors.white,
-  ];
-
-  @override
-  void initState() {
-    super.initState();
-
-    var padding = EdgeInsets.symmetric(horizontal: 18, vertical: 5);
-    double gap = 10;
-
-    tabs.add(GButton(
-      gap: gap,
-      iconActiveColor: Colors.purple,
-      iconColor: Colors.black,
-      textColor: Colors.purple,
-      backgroundColor: Colors.purple.withOpacity(.2),
-      iconSize: 24,
-      padding: padding,
-      icon: LineAwesomeIcons.home,
-      // textStyle: t.textStyle,
-      text: 'Home',
-    ));
-
-    tabs.add(GButton(
-      gap: gap,
-      iconActiveColor: Colors.pink,
-      iconColor: Colors.black,
-      textColor: Colors.pink,
-      backgroundColor: Colors.pink.withOpacity(.2),
-      iconSize: 24,
-      padding: padding,
-      icon: LineAwesomeIcons.stream,
-      // textStyle: t.textStyle,
-      text: 'Steam',
-    ));
-
-    tabs.add(GButton(
-      gap: gap,
-      iconActiveColor: Colors.amber[600],
-      iconColor: Colors.black,
-      textColor: Colors.amber[600],
-      backgroundColor: Colors.amber[600].withOpacity(.2),
-      iconSize: 24,
-      padding: padding,
-      icon: LineAwesomeIcons.line_chart,
-      // textStyle: t.textStyle,
-      text: 'Exchange',
-    ));
-
-    tabs.add(GButton(
-      gap: gap,
-      iconActiveColor: Colors.teal,
-      iconColor: Colors.black,
-      textColor: Colors.teal,
-      backgroundColor: Colors.teal.withOpacity(.2),
-      iconSize: 24,
-      padding: padding,
-      icon: LineAwesomeIcons.user,
-      // textStyle: t.textStyle,
-      text: 'Profile',
-    ));
-  }
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: PageView.builder(
-          onPageChanged: (page) {
-            setState(() {
-              selectedIndex = page;
-            });
-          },
-          controller: controller,
-          itemBuilder: (context, position) {
-            return Container(
-              color: colors[position],
-            );
-          },
-          itemCount: tabs.length, // Can be null
-        ),
-        // backgroundColor: Colors.green,
-        // body: Container(color: Colors.red,),
-        bottomNavigationBar: SafeArea(
-          child: Container(
-            margin: EdgeInsets.symmetric(horizontal: 10),
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(100)),
-                boxShadow: [
-                  BoxShadow(
-                      spreadRadius: -10,
-                      blurRadius: 60,
-                      color: Colors.black.withOpacity(.20),
-                      offset: Offset(0, 15))
-                ]),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 5.0, vertical: 5),
-              child: GNav(
-                  tabs: tabs,
-                  selectedIndex: selectedIndex,
-                  onTabChange: (index) {
-                    print(index);
-                    setState(() {
-                      selectedIndex = index;
-                    });
-                    controller.jumpToPage(index);
-                  }),
+    return  ChangeNotifierProvider(
+      create: (_) => AppState('en', colorCustom),
+      child: Consumer<AppState>(builder: (context, provider, builder) {
+        return  MaterialApp(
+            debugShowCheckedModeBanner: false,
+            supportedLocales: [Locale('en'), Locale('hi')],
+            localizationsDelegates: [AppLocalizations.delegate, GlobalMaterialLocalizations.delegate, GlobalWidgetsLocalizations.delegate],
+            localeResolutionCallback: (locale, supportedLocales) {
+              return Locale(Provider.of<AppState>(context).selectedLanguageCode);
+            },
+            locale: Provider.of<AppState>(context).locale,
+            routes: <String, WidgetBuilder>{
+
+              /**Theme 5 screens routes*/
+              AppSignUp.tag:(BuildContext context) =>AppSignUp(),
+              AppVerification.tag:(BuildContext context) =>AppVerification(),
+              AppSetPassword.tag:(BuildContext context) =>AppSetPassword(),
+              AppDashboard.tag:(BuildContext context) =>AppDashboard(),
+              AppListing.tag:(BuildContext context) =>AppListing(),
+              AppCards.tag:(BuildContext context) =>AppCards(),
+              AppSearch.tag:(BuildContext context) =>AppSearch(),
+              AppSettings.tag:(BuildContext context) =>AppSettings(),
+              AppWalkThrough.tag:(BuildContext context) =>AppWalkThrough(),
+
+            },
+            title: 'SAWS',
+            theme: ThemeData(
+                primarySwatch: colorCustom,
+                backgroundColor: AppWhite,
+                scaffoldBackgroundColor: AppWhite
             ),
-          ),
-        ),
-      ),
+            home: AppDashboard(),
+            builder: (context, child) {
+              return ScrollConfiguration(
+                behavior: SBehavior(),
+                child: child,
+              );
+            },
+          );
+      }),
     );
+
+  }
+}
+class SBehavior extends ScrollBehavior {
+  @override
+  Widget buildViewportChrome(
+      BuildContext context, Widget child, AxisDirection axisDirection) {
+    return child;
   }
 }
