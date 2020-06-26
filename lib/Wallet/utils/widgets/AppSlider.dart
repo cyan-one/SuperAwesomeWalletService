@@ -68,7 +68,6 @@ class AppSliderWidget extends StatelessWidget {
                             ],
                           ),
                         ),
-                        text("VISA",textColor: AppWhite,fontSize: textSizeLarge,fontFamily: fontBold)
                       ],
                     ),
                   )

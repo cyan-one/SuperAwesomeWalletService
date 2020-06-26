@@ -5,7 +5,6 @@ import 'package:saws/main/utils/AppColors.dart';
 import 'package:saws/Wallet/screens/AppCards.dart';
 import 'package:saws/Wallet/screens/AppDashboard.dart';
 import 'package:saws/Wallet/screens/AppListing.dart';
-import 'package:saws/Wallet/screens/AppProfile.dart';
 import 'package:saws/Wallet/screens/AppSearch.dart';
 import 'package:saws/Wallet/screens/AppSetPassword.dart';
 import 'package:saws/Wallet/screens/AppSettings.dart';
@@ -46,7 +45,6 @@ class MyApp extends StatelessWidget {
               AppCards.tag:(BuildContext context) =>AppCards(),
               AppSearch.tag:(BuildContext context) =>AppSearch(),
               AppSettings.tag:(BuildContext context) =>AppSettings(),
-              AppProfile.tag:(BuildContext context) =>AppProfile(),
               AppWalkThrough.tag:(BuildContext context) =>AppWalkThrough(),
 
             },

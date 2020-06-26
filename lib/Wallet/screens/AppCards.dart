@@ -30,9 +30,9 @@ class AppCardsState extends State<AppCards> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-    changeStatusColor(AppLayoutBackgroundWhite);
+    changeStatusColor(AppWhite);
     return Scaffold(
-      backgroundColor: AppLayoutBackgroundWhite,
+      backgroundColor: AppWhite,
       body: Container(
         alignment: Alignment.topLeft,
         child: Column(

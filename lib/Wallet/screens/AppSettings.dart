@@ -61,10 +61,10 @@ class AppSettingsState extends State<AppSettings> {
   @override
   Widget build(BuildContext context) {
     width = MediaQuery.of(context).size.width;
-    changeStatusColor(AppLayoutBackgroundWhite);
+    changeStatusColor(AppWhite);
 
     return Scaffold(
-      backgroundColor: AppLayoutBackgroundWhite,
+      backgroundColor: AppWhite,
       body: Container(
         alignment: Alignment.topLeft,
         child: Column(

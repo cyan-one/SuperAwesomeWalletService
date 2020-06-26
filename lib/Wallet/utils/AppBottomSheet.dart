@@ -40,7 +40,7 @@ class AppBottomSheetState extends State<AppBottomSheet> {
                    padding: EdgeInsets.only(top: 24),
                    alignment: Alignment.topLeft,
                    decoration: BoxDecoration(
-                       color: AppLayoutBackgroundWhite,
+                       color: AppWhite,
                        borderRadius: BorderRadius.only(
                            topLeft: Radius.circular(24),
                            topRight: Radius.circular(24)

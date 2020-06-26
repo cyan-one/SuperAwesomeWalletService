@@ -9,7 +9,6 @@ const AppTextColorSecondary=Color(0XFF888888);
 const AppTextColorThird=Color(0XFFBABFB6);
 const AppTextColorGrey=Color(0XFFB4BBC2);
 const AppWhite=Color(0XFFFFFFFF);
-const AppLayoutBackgroundWhite=Color(0XFFF6F7FA);
 const AppViewColor=Color(0XFFB4BBC2);
 const AppSkyBlue=Color(0XFF1fc9cd);
 const AppDarkNavy=Color(0XFF130925);

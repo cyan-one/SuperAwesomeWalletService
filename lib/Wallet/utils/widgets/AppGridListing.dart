@@ -28,7 +28,6 @@ class AppGridListing extends StatelessWidget {
             },
             child: Container(
               alignment: Alignment.center,
-              decoration: boxDecoration(radius: 10,showShadow: true,bgColor: AppWhite),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[

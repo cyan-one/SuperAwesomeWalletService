@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:saws/main/utils/AppColors.dart';
 
-import '../AppBubbleBotoomBar.dart';
+import './AppBubbleBotoomBar.dart';
 import '../AppImages.dart';
 import '../AppStrings.dart';
 class AppBottomBar extends StatefulWidget {
@@ -17,9 +17,9 @@ class AppBottomBarState extends State<AppBottomBar> {
   @override
   Widget build(BuildContext context) {
     return BubbleBottomBar(
-      opacity: .2,
+      opacity: .1,
       currentIndex: currentIndex,
-      elevation: 8,
+      elevation: 0,
       onTap: (index){
         setState(() {
           currentIndex = index;
@@ -30,7 +30,7 @@ class AppBottomBarState extends State<AppBottomBar> {
       //new
       hasInk: true,
       //new, gives a cute ink effect
-      inkColor: AppColorPrimaryLight,
+      inkColor: AppWhite,
       //optional, uses theme color if not specified
       items: <BubbleBottomBarItem>[
         tab(App_img_home, App_home),

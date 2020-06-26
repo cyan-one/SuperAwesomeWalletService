@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:saws/Wallet/model/AppModels.dart';
 import 'package:saws/main/utils/AppColors.dart';
 import 'package:saws/Wallet/utils/AppDataGenerator.dart';
@@ -29,11 +28,10 @@ class AppImageSliderState extends State<AppImageSlider> {
 
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
-    changeStatusColor(AppLayoutBackgroundWhite);
+    changeStatusColor(AppWhite);
 
     return Scaffold(
-      backgroundColor: AppLayoutBackgroundWhite,
+      backgroundColor: AppWhite,
       body: Container(
         alignment: Alignment.topLeft,
         child: Column(

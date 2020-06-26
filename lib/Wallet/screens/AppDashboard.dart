@@ -4,7 +4,6 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:saws/Wallet/model/AppModels.dart';
-import 'package:saws/Wallet/screens/AppProfile.dart';
 import 'package:saws/main/utils/AppColors.dart';
 import 'package:saws/Wallet/utils/AppConstant.dart';
 import 'package:saws/Wallet/utils/AppDataGenerator.dart';
@@ -86,7 +85,7 @@ class AppDashboardState extends State<AppDashboard> {
                 alignment: Alignment.topLeft,
                 height: MediaQuery.of(context).size.height-100,
                 decoration: BoxDecoration(
-                  color: AppLayoutBackgroundWhite,
+                  color: AppWhite,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(24),
                     topRight: Radius.circular(24)

@@ -29,10 +29,10 @@ class AppListingState extends State<AppListing> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-    changeStatusColor(AppLayoutBackgroundWhite);
+    changeStatusColor(AppWhite);
 
     return Scaffold(
-      backgroundColor: AppLayoutBackgroundWhite,
+      backgroundColor: AppWhite,
       body: Container(
         alignment: Alignment.topLeft,
         child: Column(
