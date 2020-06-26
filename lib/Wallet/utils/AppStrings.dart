@@ -1,9 +1,9 @@
 const app_name=" Wallet"; 
-const App_quickly_and_easily=" Quickly and easily";
-const App_shopping_online=" Shopping Online"; 
-const App_manage_your_finance=" Manage your Finance"; 
-const App_welcome_to_mollet=" Welcome to Mollet"; 
-const App_sign_in=" Sign In"; 
+const App_quickly_and_easily=" Super awesome wallet";
+const App_shopping_online=" simple setup"; 
+const App_manage_your_finance=" Web3 in your pocket"; 
+const App_welcome_to_mollet=" Welcome to saws"; 
+const App_sign_in=" Start"; 
 const App_log_in=" Log In"; 
 const App_note_registration=" Please enter your mobile number, then we will send OTP to verify"; 
 const App_lbl_registration=" Registration"; 

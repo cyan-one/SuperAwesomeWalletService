@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:saws/Wallet/screens/AppDashboard.dart';
 import 'package:saws/main/utils/AppConstant.dart';
-import 'package:saws/Wallet/screens/AppSetFingerPrint.dart';
 import 'package:saws/main/utils/AppColors.dart';
-import 'package:saws/Wallet/utils/AppExtension.dart';
 import 'package:saws/Wallet/utils/AppImages.dart';
 import 'package:saws/Wallet/utils/AppStrings.dart';
 import 'package:saws/Wallet/utils/AppWidget.dart';
+import 'package:saws/Wallet/utils/AppExtension.dart';
+import 'package:saws/Wallet/screens/AppVerification.dart';
 
 class AppSetPassword extends StatefulWidget {
   static String tag = '/AppSetPassword';
@@ -58,22 +58,29 @@ class AppSetPasswordState extends State<AppSetPassword> {
                       SizedBox(
                         height: 24,
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          launchScreen(context, AppSetFingerPrint.tag);
-                        },
-                        child: Container(
-                          alignment: Alignment.center,
-                          height: width / 8,
-                          child: text(App_continue,
-                              textColor: AppWhite, isCentered: true),
-                          decoration: boxDecoration(
-                              bgColor: AppColorPrimary, radius: 24),
-                        ),
-                      )
                     ],
                   ),
-                )
+                ),
+                 SizedBox(
+                      height: 24,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => AppDashboard(),)
+                        );
+                      },
+                      child: Container(
+                        margin: EdgeInsets.only(left: 50,right: 50,),
+                        alignment: Alignment.center,
+                        height: width / 8,
+                        child: text(App_continue,
+                            textColor: AppWhite, isCentered: true),
+                        decoration:
+                            boxDecoration(bgColor: AppColorPrimary, radius: 8),
+                      ),
+                    ),
               ],
             ),
           ),

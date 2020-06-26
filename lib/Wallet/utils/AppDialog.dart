@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:saws/Wallet/screens/AppSignIn.dart';
 import 'package:saws/main/utils/AppColors.dart';
 import 'package:saws/Wallet/utils/AppImages.dart';
 import 'package:saws/Wallet/utils/AppStrings.dart';
@@ -25,7 +24,6 @@ class AppDialogState extends State<AppDialog> {
         builder: (BuildContext context) => CustomDialog(),
       );
     });
-    return AppSignIn();
   }
 }
 

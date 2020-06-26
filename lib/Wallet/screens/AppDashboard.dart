@@ -4,6 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:saws/Wallet/model/AppModels.dart';
+import 'package:saws/Wallet/screens/AppProfile.dart';
 import 'package:saws/main/utils/AppColors.dart';
 import 'package:saws/Wallet/utils/AppConstant.dart';
 import 'package:saws/Wallet/utils/AppDataGenerator.dart';
@@ -64,7 +65,7 @@ class AppDashboardState extends State<AppDashboard> {
                child:Row(
                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                  children: <Widget>[
-                   Row(
+                    Row(
                      children: <Widget>[
                        CircleAvatar(
                          backgroundImage: AssetImage(App_profile_8),

@@ -2,6 +2,7 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:saws/Wallet/screens/AppSignUp.dart';
 import 'package:saws/main/utils/AppConstant.dart';
 import 'package:saws/main/utils/AppColors.dart';
 import 'package:saws/Wallet/utils/AppExtension.dart';
@@ -114,10 +115,13 @@ class WalkThrough extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           child: GestureDetector(
             onTap: (){
-              showToast(context, "Sign in clicked");
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AppSignUp(),)
+                );
             },
             child: Container(
-              margin: EdgeInsets.only(left: 16,right: 16,bottom: 50),
+              margin: EdgeInsets.only(left: 50,right: 50,bottom: 80),
               alignment: Alignment.center,
               height: width/8,
               child: text(App_sign_in,textColor: AppWhite,isCentered: true),
