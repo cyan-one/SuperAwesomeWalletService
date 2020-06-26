@@ -58,6 +58,7 @@ dependencies:
   rating_bar:
   clippy_flutter: 1.1.1
   flutter_tags: ^0.4.8
+  wallet_core: ^0.2.3+8
 
 
 dev_dependencies:
